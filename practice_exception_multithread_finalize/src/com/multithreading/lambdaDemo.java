@@ -6,7 +6,7 @@ public class lambdaDemo {
 	public static void main(String[] args) throws InterruptedException {
 		System.out.println("good ");
 	
-	
+	//anonymous class
 		Thread t1 = new Thread(() ->
 		 {
 		for(int i=0;i<=5;i++) {

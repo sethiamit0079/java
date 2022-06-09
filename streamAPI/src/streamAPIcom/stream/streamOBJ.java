@@ -12,6 +12,14 @@ public class streamOBJ {
 	//STREAM API - COLLECTION PROCESS
 	//GROUP OF OBJECTS 
 		
+		//5 best way
+		List<String> list = Arrays.asList("Hello ", 
+                         "G", "E", "E", "K", "S!");
+		// or 
+		
+		List<String> l1 = List.of("hi","i","am","amit");
+		
+		
 		//1- blank stram
 		Stream<Object> st = Stream.empty();
 		st.forEach(e ->{
@@ -38,9 +46,7 @@ public class streamOBJ {
 			System.out.println(e);
 		});
 		
-		//5
-		List<String> list = Arrays.asList("Hello ", 
-                         "G", "E", "E", "K", "S!");
+		
 		
 		//4 list set  *************************
 		List <Integer> list1 = new ArrayList<Integer>();

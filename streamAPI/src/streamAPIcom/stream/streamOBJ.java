@@ -44,6 +44,11 @@ public class streamOBJ {
 		for(int i=11;i<=20;i++) {
 			list1.add(i);
 		}
+		
+		//5 
+		List<String> list = Arrays.asList("Hello ", 
+                         "G", "E", "E", "K", "S!");
+		
 		//list1 is list interface ka obj
 		Stream<Integer> st3 = list1.stream();
 		st3.forEach(e ->{

@@ -38,16 +38,16 @@ public class streamOBJ {
 			System.out.println(e);
 		});
 		
+		//5
+		List<String> list = Arrays.asList("Hello ", 
+                         "G", "E", "E", "K", "S!");
+		
 		//4 list set  *************************
 		List <Integer> list1 = new ArrayList<Integer>();
 		//child class obj stored in parent class obj
 		for(int i=11;i<=20;i++) {
 			list1.add(i);
 		}
-		
-		//5 
-		List<String> list = Arrays.asList("Hello ", 
-                         "G", "E", "E", "K", "S!");
 		
 		//list1 is list interface ka obj
 		Stream<Integer> st3 = list1.stream();

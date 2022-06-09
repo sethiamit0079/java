@@ -11,7 +11,7 @@ public class runnableINterfaceDemo {
 		Runnable obj1 = new hii();
 		Runnable obj2 = new helloo();
 		
-		
+		//Runnable -->  Thread --> run()
 		Thread t1 = new Thread(obj1);
 		Thread t2 = new Thread(obj2);
 		

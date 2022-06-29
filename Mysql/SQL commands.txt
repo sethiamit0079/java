@@ -1,0 +1,132 @@
+create database amit;
+
+USE amit;
+
+
+CREATE TABLE STU(
+ID INT,
+NAME VARCHAR(50),
+SALARY INT,
+AGE INT,
+CITY VARCHAR(50));
+
+ALTER TABLE STUDENT
+ADD SALARY INT;
+
+INSERT INTO STU(ID,NAME,AGE,CITY,SALARY)
+VALUES
+(1,'AMIT',23,'PUN',17000),
+(2,'BHARAT',22,'PUN',11000),
+(3,'DEEPAK',18,'CHD',13000),
+(4,'AKSHAY',19,'HAR',1400),
+(5,'KATARIA',20,'CHD',15000),
+(6,'CHARU',21,'HAR',16000);
+
+
+select * from STUDENT;
+
+SELECT SALARY,NAME FROM STUDENT ORDER BY SALARY ASC;
+
+SELECT * FROM STUDENT LIMIT 2,3;
+
+UPDATE STUDENT SET SALARY = 16500 ;
+
+SELECT SUM(SALARY) FROM STUDENT;
+
+
+
+CREATE TABLE EMP(
+ID INT,
+NAME VARCHAR(50),
+SALARY INT,
+AGE INT,
+CITY INT,
+PRIMARY KEY(ID));
+
+
+INSERT INTO EMP(ID,NAME,AGE,CITY,SALARY)
+VALUES
+(1,'AMIT',23,1,17000),
+(2,'BHARAT',22,2,11000),
+(3,'DEEPAK',18,1,13000),
+(4,'AKSHAY',19,3,1400),
+(5,'KATARIA',20,2,15000),
+(6,'CHARU',21,3,16000);
+
+INSERT INTO stu(ID,NAME,SALARY,AGE,CITY)
+VALUES
+(7,'CHARU',16000,21,'HAR');
+
+SELECT * FROM EMP;
+
+CREATE TABLE CITY(
+CID INT,
+CITY VARCHAR(50),
+PRIMARY KEY(CID));
+
+SELECT * FROM CITY;
+
+INSERT INTO CITY(CID,CITY)
+VALUES (1,'PNB'),
+(2,'CND'),
+(3,'GRU');
+
+ALTER TABLE EMP ADD foreign key(CITY) REFERENCES CITY(CID);
+
+SELECT * FROM EMP RIGHT JOIN CITY ON EMP.CITY = CITY.CID WHERE CITY.CITY = 'PNB';
+
+SELECT * FROM STU;
+
+SELECT CITY,NAME ,COUNT(CITY) FROM STU GROUP BY CITY;
+
+SELECT NAME FROM STU WHERE CITY != (SELECT  CITY FROM STU WHERE ID = 1);
+
+SELECT NAME, IF(SALARY>15000,"PASS","FAIL") AS RES FROM STU;
+
+select max(salary) from stu where salary < (select max(salary) from stu where salary < (select max(salary) from stu where salary));
+
+
+select name,salary from stu order by salary desc limit 1,1;
+
+CREATE INDEX NAME_IND ON STU(NAME);
+
+
+
+select * from stu;
+
+
+-- third highest salary 
+select * from stu order by salary desc limit 1,1;
+-- nth hihest salary without taking top or limit 
+select max(salary) from stu where salary  < (select max(salary) from stu);
+
+select max(salary) from stu where salary < (select max(salary) from stu where salary < (select max(salary) from stu where salary));
+
+
+select * from stu;
+
+-- find duplicacy 
+
+select * ,count(NAME) from stu group by NAME HAVING COUNT(NAME) > 1;
+
+-- FIND ENVEN OFF RECORDS
+
+SELECT * FROM STU WHERE MOD(ID,2)=0;
+SELECT * FROM STU WHERE MOD(ID,2)=1;
+
+-- SELECT FIRST & LAST RECOERD
+SELECT * FROM STU WHERE ID = (SELECT MIN(ID) FROM STU);
+
+SELECT * FROM STU WHERE ID = (SELECT MAX(ID) FROM STU);
+
+
+
+
+
+
+
+
+
+
+
+

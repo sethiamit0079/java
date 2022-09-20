@@ -13,7 +13,8 @@ public class quickSortingTech {
 		int i=l;
 		int j=h;
 		while(i<j) {
-			while(arr[i]<=pivot)i++;
+			//modifications here
+			while(i<= h && arr[i]<=pivot)i++;
 			
 			while(arr[j]>pivot)j--;
 			

@@ -31,7 +31,9 @@ public class quickSortAlgo {
 		while(i<j) {
 			
 			//*
-			while(arr[i]<=pivot) {
+			//modifications here
+			
+			while( i <= h && arr[i]<=pivot) {
 				i++;
 			}
 			while(arr[j]>pivot) {
